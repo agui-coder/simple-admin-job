@@ -34,7 +34,7 @@ import (
 	"github.com/suyuan32/simple-admin-job/types/job"
 )
 
-var configFile = flag.String("f", "etc/job.yaml", "the config file")
+var configFile = flag.String("f", "etc/job_dev.yaml", "the config file")
 
 func main() {
 	flag.Parse()

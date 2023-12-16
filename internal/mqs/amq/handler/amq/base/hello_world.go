@@ -9,6 +9,7 @@ import (
 	"github.com/suyuan32/simple-admin-job/ent/task"
 	"github.com/suyuan32/simple-admin-job/internal/enum/taskresult"
 	"github.com/suyuan32/simple-admin-job/internal/mqs/amq/types/pattern"
+	"github.com/suyuan32/simple-admin-job/internal/mqs/amq/types/payload"
 	"github.com/suyuan32/simple-admin-job/internal/utils/dberrorhandler"
 	"github.com/zeromicro/go-zero/core/errorx"
 	"github.com/zeromicro/go-zero/core/logx"
@@ -16,7 +17,6 @@ import (
 
 	"github.com/hibiken/asynq"
 
-	"github.com/suyuan32/simple-admin-job/internal/mqs/amq/types/payload"
 	"github.com/suyuan32/simple-admin-job/internal/svc"
 )
 

@@ -15,9 +15,11 @@
 package svc
 
 import (
+	"github.com/agui-coder/simple-admin-pay-rpc/payclient"
 	"github.com/hibiken/asynq"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/stores/redis"
+	"github.com/zeromicro/go-zero/zrpc"
 
 	"github.com/suyuan32/simple-admin-job/ent"
 	"github.com/suyuan32/simple-admin-job/internal/config"
@@ -31,6 +33,7 @@ type ServiceContext struct {
 	AsynqServer    *asynq.Server
 	AsynqScheduler *asynq.Scheduler
 	AsynqPTM       *asynq.PeriodicTaskManager
+	PayRpc         payclient.Pay
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
@@ -47,5 +50,6 @@ func NewServiceContext(c config.Config) *ServiceContext {
 		AsynqScheduler: c.AsynqConf.NewScheduler(),
 		AsynqPTM:       c.AsynqConf.NewPeriodicTaskManager(periodicconfig.NewEntConfigProvider(db)),
 		Redis:          redis.MustNewRedis(c.RedisConf),
+		PayRpc:         payclient.NewPay(zrpc.NewClientIfEnable(c.PayRpc)),
 	}
 }

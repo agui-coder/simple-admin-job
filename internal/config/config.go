@@ -14,6 +14,7 @@ type Config struct {
 	RedisConf    redis.RedisConf
 	AsynqConf    asynq.AsynqConf
 	TaskConf     TaskConf
+	PayRpc       zrpc.RpcClientConf
 }
 
 type TaskConf struct {

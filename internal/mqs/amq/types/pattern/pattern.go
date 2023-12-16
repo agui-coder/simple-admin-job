@@ -2,3 +2,7 @@
 package pattern
 
 const RecordHelloWorld = "hello_world"
+
+const PayOrderSuccessNotify = "pay_order_success_notify"
+
+const PayRefundSuccessNotify = "pay_refund_success_notify"
