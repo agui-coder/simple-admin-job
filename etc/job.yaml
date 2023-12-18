@@ -44,3 +44,8 @@ AsynqConf:
 TaskConf:
   EnableScheduledTask: false
   EnableDPTask: true
+
+PayRpc:
+  Endpoints:
+    - pay-rpc:9007
+  NonBlock: true
